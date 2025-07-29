@@ -1,0 +1,14 @@
+a:2:{s:7:"expires";i:1744213769;s:7:"content";a:6:{s:2:"id";s:32:"0a0a2dd21d7745189905dffe8ecb03cf";s:6:"object";s:15:"chat.completion";s:7:"created";i:1744210168;s:5:"model";s:13:"mistral-small";s:7:"choices";a:1:{i:0;a:3:{s:5:"index";i:0;s:7:"message";a:3:{s:4:"role";s:9:"assistant";s:10:"tool_calls";N;s:7:"content";s:238:"Sure, here is the formatted response in HTML:
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>New Notifications:</h3>
+
+<p>At the moment, there are no new notifications.</p>
+
+</body>
+</html>
+
+Please check back later for any updates or new information!";}s:13:"finish_reason";s:4:"stop";}}s:5:"usage";a:3:{s:13:"prompt_tokens";i:43;s:12:"total_tokens";i:125;s:17:"completion_tokens";i:82;}}}

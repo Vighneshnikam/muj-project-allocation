@@ -1,0 +1,13 @@
+a:2:{s:7:"expires";i:1744271381;s:7:"content";a:6:{s:2:"id";s:32:"80fc7895e0aa4465b8542d06dbec028d";s:6:"object";s:15:"chat.completion";s:7:"created";i:1744267779;s:5:"model";s:13:"mistral-small";s:7:"choices";a:1:{i:0;a:3:{s:5:"index";i:0;s:7:"message";a:3:{s:4:"role";s:9:"assistant";s:10:"tool_calls";N;s:7:"content";s:685:"<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Where is India</title>
+</head>
+<body>
+    <h1>Where is India?</h1>
+    <p>India is located in South Asia and is the second-most populous country in the world. It is bordered by Pakistan, China, Nepal, Bhutan, Bangladesh, and Myanmar. It also has maritime borders with the Maldives, Sri Lanka, and Thailand. The country is home to various landscapes, including mountains, deserts, and beaches, and has a rich history and cultural heritage.</p>
+    <img src="india_map.png" alt="Map of India" width="400" height="300">
+</body>
+</html>";}s:13:"finish_reason";s:4:"stop";}}s:5:"usage";a:3:{s:13:"prompt_tokens";i:42;s:12:"total_tokens";i:267;s:17:"completion_tokens";i:225;}}}

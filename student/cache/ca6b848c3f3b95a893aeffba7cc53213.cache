@@ -1,0 +1,37 @@
+a:2:{s:7:"expires";i:1744212267;s:7:"content";a:6:{s:2:"id";s:32:"c9961352da274d8db93f7ae2be9913cf";s:6:"object";s:15:"chat.completion";s:7:"created";i:1744208663;s:5:"model";s:13:"mistral-small";s:7:"choices";a:1:{i:0;a:3:{s:5:"index";i:0;s:7:"message";a:3:{s:4:"role";s:9:"assistant";s:10:"tool_calls";N;s:7:"content";s:1318:"Here's a simple HTML format for your request:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaipur Information</title>
+</head>
+<body>
+    <h1>Jaipur: A City and a Ruby Gem</h1>
+    <h2>City</h2>
+    <p>
+        Jaipur is the capital and the largest city of the Indian state of Rajasthan. It was founded on 18 November 1727 by Maharaja Jai Singh II, the ruler of Amer, after whom the city is named. Jaipur is also known as the "Pink City" for the color of its buildings.
+    </p>
+    <h2>Ruby Gem</h2>
+    <p>
+        Jaipur is also a Ruby gem used for parsing and generating JWT (JSON Web Tokens). It is compatible with Rack, Sinatra, and Ruby on Rails. It supports JWT version 1 (RFC 7519) and is distributed under the MIT license.
+    </p>
+    <h3>Installation</h3>
+    <p>
+        Add the following line to your Gemfile: <code>gem 'jaipur'</code>
+    </p>
+    <h3>Usage</h3>
+    <p>
+        Here's an example of generating a JWT using the 'jaipur' gem:
+    </p>
+    <pre><code>
+require 'jaipur'
+
+header = { 'alg' => 'HS256', 'typ' => 'JWT' }
+payload = { 'user_id' => 123, 'username' => 'john_doe' }
+
+jwt = Jaipur::JWT.encode(header, payload, 'your-256-bit-secret', 'HS256')
+    </code></pre>
+</body>
+</html>";}s:13:"finish_reason";s:4:"stop";}}s:5:"usage";a:3:{s:13:"prompt_tokens";i:43;s:12:"total_tokens";i:540;s:17:"completion_tokens";i:497;}}}

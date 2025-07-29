@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://yourdomain.com/index.php</loc>
+  </url>
+  <url>
+    <loc>http://yourdomain.com/privacy-policy.php</loc>
+  </url>
+  <url>
+    <loc>http://yourdomain.com/terms-of-service.php</loc>
+  </url>
+  <url>
+    <loc>http://yourdomain.com/contact.php</loc>
+  </url>
+  <!-- Add more URLs as needed -->
+</urlset> 

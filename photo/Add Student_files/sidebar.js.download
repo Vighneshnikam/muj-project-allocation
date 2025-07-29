@@ -1,0 +1,36 @@
+
+
+// Desktop toggle
+document.querySelector('.toggle-btn').addEventListener('click', function() {
+    document.getElementById('sidebar').classList.toggle('expand');
+    document.querySelector('.main').classList.toggle('pushed');
+  });
+  
+  // Wait for DOM to be fully loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    // For mobile menu
+    const mobileMenuBtn = document.querySelector('.mobile-menu-icon');
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.querySelector('.main');
+  
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', function() {
+            console.log('Mobile menu clicked'); // For debugging
+            toggleMenu();
+        });
+    }
+  
+    // For desktop toggle
+    const desktopToggleBtn = document.querySelector('.toggle-btn');
+    if (desktopToggleBtn) {
+        desktopToggleBtn.addEventListener('click', function() {
+            console.log('Desktop toggle clicked'); // For debugging
+            toggleMenu();
+        });
+    }
+  
+    function toggleMenu() {
+        sidebar.classList.toggle('expand');
+        mainContent.classList.toggle('pushed');
+    }
+  });

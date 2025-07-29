@@ -1,0 +1,64 @@
+[2025-04-03 21:01:02] [ERROR] SQL execution error: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '\_type, project\_domain\_type, fid, semester, max\_student, no\_of\_student\_...' at line 1 - Query: SELECT p_id, pname, pdesc, project\_type, project\_domain\_type, fid, semester, max\_student, no\_of\_student\_allocated 
+FROM project;
+[2025-04-03 21:05:22] [ERROR] Database connection error: SQLSTATE[HY000] [2019] Unknown character set
+[2025-04-03 21:05:27] [ERROR] Database connection error: SQLSTATE[HY000] [2019] Unknown character set
+[2025-04-03 21:06:21] [ERROR] Database connection error: SQLSTATE[HY000] [2019] Unknown character set
+[2025-04-03 21:06:23] [ERROR] Database connection error: SQLSTATE[HY000] [2019] Unknown character set
+[2025-04-03 21:06:27] [ERROR] Database connection error: SQLSTATE[HY000] [2019] Unknown character set
+[2025-04-03 21:06:33] [ERROR] Database connection error: SQLSTATE[HY000] [2019] Unknown character set
+[2025-04-04 07:14:40] [ERROR] Database connection error: SQLSTATE[HY000] [2019] Unknown character set
+[2025-04-04 07:14:44] [ERROR] Database connection error: SQLSTATE[HY000] [2019] Unknown character set
+[2025-04-04 07:14:45] [ERROR] Database connection error: SQLSTATE[HY000] [2019] Unknown character set
+[2025-04-04 07:14:49] [ERROR] Database connection error: SQLSTATE[HY000] [2019] Unknown character set
+[2025-04-04 07:14:51] [ERROR] Database connection error: SQLSTATE[HY000] [2019] Unknown character set
+[2025-04-04 07:14:57] [ERROR] Database connection error: SQLSTATE[HY000] [2019] Unknown character set
+[2025-04-04 07:15:04] [ERROR] Database connection error: SQLSTATE[HY000] [2019] Unknown character set
+[2025-04-04 07:16:55] [ERROR] Database connection error: SQLSTATE[HY000] [2019] Unknown character set
+[2025-04-04 07:16:59] [ERROR] Database connection error: SQLSTATE[HY000] [2019] Unknown character set
+[2025-04-09 10:34:33] [ERROR] Database connection error: SQLSTATE[HY000] [2019] Unknown character set
+[2025-04-09 10:34:37] [ERROR] Database connection error: SQLSTATE[HY000] [2019] Unknown character set
+[2025-04-09 10:34:39] [ERROR] Database connection error: SQLSTATE[HY000] [2019] Unknown character set
+[2025-04-09 10:34:42] [ERROR] Database connection error: SQLSTATE[HY000] [2019] Unknown character set
+[2025-04-09 10:34:45] [ERROR] Database connection error: SQLSTATE[HY000] [2019] Unknown character set
+[2025-04-09 11:32:43] [ERROR] Database connection error: SQLSTATE[HY000] [2019] Unknown character set
+[2025-04-09 11:36:05] [ERROR] Database connection error: SQLSTATE[HY000] [2019] Unknown character set
+[2025-04-09 11:36:07] [ERROR] Database connection error: SQLSTATE[HY000] [2019] Unknown character set
+[2025-04-09 11:36:11] [ERROR] Database connection error: SQLSTATE[HY000] [2019] Unknown character set
+[2025-04-09 11:40:17] [ERROR] Database connection error: SQLSTATE[HY000] [2019] Unknown character set
+[2025-04-09 11:40:20] [ERROR] Database connection error: SQLSTATE[HY000] [2019] Unknown character set
+[2025-04-09 11:40:24] [ERROR] Database connection error: SQLSTATE[HY000] [2019] Unknown character set
+[2025-04-09 11:44:22] [ERROR] SQL execution error: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '\_id, p.pname, p.pdesc, p.project\_type, p.project\_domain\_type
+FROM project...' at line 1 - Query: SELECT p.p\_id, p.pname, p.pdesc, p.project\_type, p.project\_domain\_type
+FROM project p
+WHERE p.project\_domain\_type = 'AI';
+[2025-04-09 15:51:35] [ERROR] SQL execution error: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '\_type, project\_domain\_type, fid, semester, max\_student, no\_of\_student\_...' at line 1 - Query: SELECT p_id, pname, pdesc, project\_type, project\_domain\_type, fid, semester, max\_student, no\_of\_student\_allocated 
+FROM project;
+[2025-04-09 15:52:01] [ERROR] SQL execution error: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '\_type, project\_domain\_type, fid, semester, max\_student, no\_of\_student\_...' at line 1 - Query: SELECT p_id, pname, pdesc, project\_type, project\_domain\_type, fid, semester, max\_student, no\_of\_student\_allocated FROM project;
+[2025-04-09 16:20:21] [ERROR] SQL execution error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'lock_until' in 'where clause' - Query: SELECT * FROM `project`
+WHERE MONTH(`lock_until`) = MONTH(CURRENT_DATE())
+AND YEAR(`lock_until`) = YEAR(CURRENT_DATE());
+[2025-04-09 16:22:14] [ERROR] API error: , HTTP code: 400
+[2025-04-09 16:22:25] [ERROR] SQL execution error: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '\_no, fid, fname, email, mobile FROM faculty' at line 1 - Query: SELECT sr\_no, fid, fname, email, mobile FROM faculty;
+[2025-04-09 16:22:27] [ERROR] API error: , HTTP code: 400
+[2025-04-09 16:22:41] [ERROR] SQL execution error: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '\_type, project\_domain\_type, fid, semester, max\_student, no\_of\_student\_...' at line 1 - Query: SELECT p_id, pname, pdesc, project\_type, project\_domain\_type, fid, semester, max\_student, no\_of\_student\_allocated 
+FROM project;
+[2025-04-09 16:29:01] [ERROR] SQL execution error: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '\_no, fid, fname, email, mobile FROM faculty' at line 1 - Query: SELECT sr\_no, fid, fname, email, mobile FROM faculty;
+[2025-04-09 16:30:10] [ERROR] SQL execution error: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '\_type, project\_domain\_type, fid, semester, max\_student, no\_of\_student\_...' at line 1 - Query: SELECT p_id, pname, pdesc, project\_type, project\_domain\_type, fid, semester, max\_student, no\_of\_student\_allocated 
+FROM project;
+[2025-04-09 16:30:43] [ERROR] SQL execution error: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '\_type, project\_domain\_type, fid, semester, max\_student, no\_of\_student\_...' at line 1 - Query: SELECT p_id, pname, pdesc, project\_type, project\_domain\_type, fid, semester, max\_student, no\_of\_student\_allocated 
+FROM project;
+[2025-04-09 16:30:44] [ERROR] API error: , HTTP code: 429
+[2025-04-09 16:30:50] [ERROR] SQL execution error: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '\_type, project\_domain\_type, fid, semester, max\_student, no\_of\_student\_...' at line 1 - Query: SELECT p_id, pname, pdesc, project\_type, project\_domain\_type, fid, semester, max\_student, no\_of\_student\_allocated 
+FROM project;
+[2025-04-09 16:40:10] [ERROR] SQL execution error: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '\_type, project\_domain\_type, fid, semester, max\_student, no\_of\_student\_...' at line 1 - Query: SELECT p_id, pname, pdesc, project\_type, project\_domain\_type, fid, semester, max\_student, no\_of\_student\_allocated 
+FROM project;
+[2025-04-09 16:49:27] [ERROR] SQL execution error: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '\_no, message, datetime
+FROM notifications
+WHERE datetime >= NOW() - INTERVAL...' at line 1 - Query: SELECT registration\_no, message, datetime
+FROM notifications
+WHERE datetime >= NOW() - INTERVAL 1 DAY;
+[2025-04-10 08:49:08] [ERROR] SQL execution error: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '\_id, `pname` AS project\_name, `pdesc` AS project\_description, `project_typ...' at line 1 - Query: SELECT `p_id` AS project\_id, `pname` AS project\_name, `pdesc` AS project\_description, `project_type` AS project\_type, `project_domain_type` AS project\_domain\_type, `max_student` AS maximum\_students FROM `project` WHERE `project_type` = 'web';
+[2025-04-10 08:49:09] [ERROR] API error: , HTTP code: 429
+[2025-04-16 06:26:22] [ERROR] SQL execution error: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '\*) FROM `project`' at line 1 - Query: SELECT COUNT(\*) FROM `project`;
+[2025-04-16 06:26:23] [ERROR] API error: , HTTP code: 429
+[2025-05-13 16:05:28] [ERROR] SQL execution error: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '\_type, project\_domain\_type, fid, semester, max\_student, no\_of\_student\_...' at line 1 - Query: SELECT p_id, pname, pdesc, project\_type, project\_domain\_type, fid, semester, max\_student, no\_of\_student\_allocated FROM project;

@@ -1,0 +1,30 @@
+a:2:{s:7:"expires";i:1744212544;s:7:"content";a:6:{s:2:"id";s:32:"cb97ede1d6eb4b84ae1fb1c39ee65bcc";s:6:"object";s:15:"chat.completion";s:7:"created";i:1744208942;s:5:"model";s:13:"mistral-small";s:7:"choices";a:1:{i:0;a:3:{s:5:"index";i:0;s:7:"message";a:3:{s:4:"role";s:9:"assistant";s:10:"tool_calls";N;s:7:"content";s:593:"Sure, here is a simple HTML format to display a faculty list:
+
+<html>
+<body>
+
+<h2>Faculty List</h2>
+
+<table style="width:100%">
+ <tr>
+ <th>Name</th>
+ <th>Department</th>
+ <th>Email</th>
+ </tr>
+ <tr>
+ <td>John Doe</td>
+ <td>Computer Science</td>
+ <td>jdoe@university.edu</td>
+ </tr>
+ <tr>
+ <td>Jane Smith</td>
+ <td>Engineering</td>
+ <td>jsmith@university.edu</td>
+ </tr>
+ <!-- Add more faculty members here -->
+</table>
+
+</body>
+</html>
+
+You can add more rows to the table to include more faculty members. Replace the names, departments, and emails with the actual information for your faculty.";}s:13:"finish_reason";s:4:"stop";}}s:5:"usage";a:3:{s:13:"prompt_tokens";i:41;s:12:"total_tokens";i:262;s:17:"completion_tokens";i:221;}}}

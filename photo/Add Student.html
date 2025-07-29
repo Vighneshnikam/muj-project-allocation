@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)http://localhost/muj/admin/adminaddstudent.php -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="http://localhost/muj/photo/muj-title-logo.png" type="image/png">
+
+    <!---------------------------- CSS Links --------------------------------->
+
+    <link rel="stylesheet" href="./Add Student_files/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.lineicons.com/4.0/lineicons.css">
+    <link rel="stylesheet" href="./Add Student_files/sidebar-style.css">
+    <link rel="stylesheet" href="./Add Student_files/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="./Add Student_files/table.css">
+    <link rel="stylesheet" href="./Add Student_files/faculty-style.css">
+    <link rel="stylesheet" href="./Add Student_files/common-styling.css"> <!-- Uncomment if needed -->
+    <!---------------------------- JS Links --------------------------------->
+    <script src="./Add Student_files/bootstrap.min.js.download"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">
+    <script src="./Add Student_files/fontawesome.min.js.download"></script>
+    <script src="./Add Student_files/jquery.dataTables.min.js.download"></script>
+
+    
+<!-- JavaScript for Dynamic Title -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Map pages to their respective titles
+        const pageTitles = {
+            "adminprofile.php": "Admin Profile",
+            "adminaddfaculty.php": "Add Faculty",
+            "adminaddstudent.php": "Add Student",
+            "adminaddproject.php": "Add Project",
+            "admin_allocated_project.php": "Allocated Project",
+            "admin_remening_student.php": "Remaining Student",
+            "admin_share_notification.php": "Circular Notice",
+            "change_password.php": "Change Password",
+            "adminfeedback.php": "Admin Feedback",
+            "adminlogout.php": "Admin Logout",
+        };
+
+        // Get the current URL of the page
+        const currentURL = window.location.href;
+        
+        // Find the page name (last part of the URL after '/')
+        const pageName = currentURL.split("/").pop();
+        
+        // Update the title dynamically if a match is found in the map
+        document.title = pageTitles[pageName] || "Addmin Profile";
+    });
+
+    
+</script>
+
+
+      <style>
+
+        
+    
+.password-container {
+  position: relative;
+}
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #6c757d;
+}
+.alert {
+  animation: fadeIn 0.5s;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+      </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+<button class="mobile-menu-icon">
+    <i class="fas fa-bars" style="postion:relative;  color:white"></i>
+</button>
+<header class="custom-header bg-custom p-0">
+    <div class="container d-flex justify-content-between align-items-center" style="height: 50px;">
+        <!-- Notification Icon -->
+      
+        <!-- Student's Name/Registration Number on the Right -->
+        <div class="text-white container d-flex justify-content-end position-relative" style="right:35px; top: 10px">
+        <a href="http://localhost/muj/admin/admin_share_notification.php" class="position-relative" style=" margin-right:20px;">
+            <i class="fas fa-bell" style="font-size: 20px; color: white;"></i>
+        </a>
+
+            <span class="me-2">rakesh :: </span>
+            <span>admin_sem6</span>
+        </div>
+    </div>
+</header>
+<div class="wrapper">
+        <aside id="sidebar" class="">
+            <div class="d-flex">
+                <button class="toggle-btn" type="button" style="background-color: white;">
+                    <i class="lni lni-grid-alt" style="color:#e45f06; width:26px"></i>
+                </button>
+                <div class="sidebar-logo">
+                    <a href="http://localhost/muj/admin/adminprofile.php"><img src="./Add Student_files/manipallogo.png" style="height:65px; width:190px; margin-left:-1px" alt=""></a>
+                </div>
+            </div>
+            <ul class="sidebar-nav" style="text-decoration: none;">
+                <li class="sidebar-item">
+                    <a href="http://localhost/muj/admin/adminprofile.php" class="sidebar-link">
+                    <i style="font-size:20px" class="fas fa-user-circle icon"></i>
+                        <span style="font-size:18px">Profile</span>
+                    </a>
+                </li>
+   
+                <li class="sidebar-item">
+                    <a href="http://localhost/muj/admin/adminaddfaculty.php" class="sidebar-link">
+                    <i style="font-size:20px" class="fas fa-chalkboard-teacher icon"></i>
+                        <span style="font-size:18px">Faculty</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a href="http://localhost/muj/admin/adminaddstudent.php" class="sidebar-link">
+                
+                    <i style="font-size:20px" class="fas fa-user-graduate icon"></i>
+                        <span style="font-size:18px">Student</span>
+                    </a>
+                </li>
+             
+
+                <li class="sidebar-item">
+                    <a href="http://localhost/muj/admin/addproject.php" class="sidebar-link">
+                    <i style="font-size:20px" class="fas fa-project-diagram icon"></i>
+                        <span style="font-size:18px">projects</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="http://localhost/muj/admin/admin_allocated_project.php" class="sidebar-link">
+                    <i style="font-size:20px" class="fas fa-tasks icon"></i>
+                        <span style="font-size:18px">Allocated project</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="http://localhost/muj/admin/admin_remening_student.php" class="sidebar-link">
+                    <i style="font-size:20px" class="fas fa-user-clock icon"></i>
+                        <span style="font-size:18px">Remaining Student</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item">
+                    <a href="http://localhost/muj/admin/admin_share_notification.php" class="sidebar-link">
+                    <i style="font-size:20px" class="fas fa-bullhorn icon"></i>
+                        <span style="font-size:18px">Share Notice</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="http://localhost/muj/admin/adminfeedback.php" class="sidebar-link">
+                    <i style="font-size:20px" class="fas fa-comment-dots"></i>
+                    <span>Feedback</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="http://localhost/muj/admin/change_password.php" class="sidebar-link">
+    
+<i style="font-size:20px" class="fas fa-lock"></i>
+                        <span style="font-size:18px">Change Password</span>
+                    </a>
+                </li>
+
+            </ul>
+            <div class="sidebar-footer">
+                <a href="http://localhost/muj/admin/adminlogout.php" style="text-decoration:none" class="sidebar-link">
+                    <i style="font-size:20px" class="lni lni-exit"></i>
+                    <span style="font-size:18px">Logout</span>
+                </a>
+            </div>
+        </aside>
+        <div class="main p-3 mt-5">
+            <div class="text-center">
+            <div class="container">
+
+            <script>
+ const sidebar = document.querySelector("#sidebar");
+
+sidebar.addEventListener("mouseenter", function() {
+    sidebar.classList.add("expand");
+});
+
+sidebar.addEventListener("mouseleave", function() {
+    sidebar.classList.remove("expand");
+});
+
+</script>
+
+
+<script src="./Add Student_files/sidebar.js.download"></script>
+
+
+
+
+
+
+
+
+
+
+<script>alert('Student data has been uploaded successfully.');</script><script>alert('Some rows were skipped:\nRow 3: Invalid email format.\nRow 12: Missing required fields.\nRow 13: Missing required fields.\nRow 14: Missing required fields.\nRow 15: Missing required fields.\nRow 16: Missing required fields.\nRow 17: Missing required fields.\nRow 18: Missing required fields.\nRow 19: Missing required fields.\nRow 20: Missing required fields.\nRow 21: Missing required fields.\nRow 22: Missing required fields.\nRow 23: Missing required fields.\nRow 24: Missing required fields.');</script>
+<!-- Modal -->
+<div class="modal fade" id="studentexcel" tabindex="-1" aria-labelledby="studentexcel" aria-hidden="true">
+  <div class=" modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header"> 
+        <h5 class="modal-title" id="exampleModalLabel" style="font-weight:bold;">Upload Student Excel sheet</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        
+      </div>
+      <div class="modal-body">
+        <form class="row g-3 m-3" method="POST" enctype="multipart/form-data" action="http://localhost/muj/admin/adminaddstudent.php">
+          <div class="col-md-6">
+            <label for="validationDefault01" class="form-label">Upload file</label>
+            <input type="file" class="form-control" name="excelFile" required="">
+          </div>
+          <h5 class="text-bold">
+    Note: 
+    <span>
+        
+            Download Excelsheet Format from here: 
+            <a id="download" class=" btn-link" href="http://localhost/muj/admin/path/to/excel_file.xlsx" download="">
+                Download Excel File
+            </a>
+    
+    </span>
+</h5>
+
+  <script>
+    document.getElementById('download').addEventListener('click', function () {
+      // Data for the Excel file
+      const data = [
+        ['Student Name', 'Student Registraion_no', 'Student Section', 'Year Of Admission', 'Current Semester', 'Student Outlook'],
+        ['John Doe', 219032206001, 'h', '2024', '3', 'john.219032206001@muj.manipal.edu'],
+        ['Remove Second row and add your data; Student Name, All Filled is Mandatory '],
+
+      ];
+
+      // Create a new workbook and worksheet
+      const wb = XLSX.utils.book_new();
+      const ws = XLSX.utils.aoa_to_sheet(data);
+
+      // Append the worksheet to the workbook
+      XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+
+      // Create and download the Excel file
+      XLSX.writeFile(wb, 'example.xlsx');
+    });
+  </script>
+  
+
+
+  <div class="col-12 mt-5 d-flex justify-content-end gap-2">
+    <button class="btn" id="btnorange" name="add_student_excel" type="submit">Save</button>
+    <button type="button" class="btn" id="btnred" data-dismiss="modal">Close</button>
+</div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Main Content -->
+<div class="main_content">
+  <div class="container mt-5">
+    <h3 class="mt-5 text-center" style="font-weight:bold">Add Student</h3>
+    <div class="d-flex mb-3 flex-column flex-sm-row justify-content-end align-items-center">
+      <!-- Button trigger modal -->
+      <button type="button" class="btn" id="btnorange" data-bs-toggle="modal" data-bs-target="#studentexcel">
+        Upload Excel File
+      </button>
+
+      <!-- Form to handle delete all students request -->
+      <form method="POST">
+        <button class="btn" id="btnred" name="deleteallstudent" type="submit" onclick="return confirm(&#39;Are you sure you want to delete all students?&#39;);">
+          <i class="fa-solid fa-trash-can"></i>Delete All Students
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="card">
+    <form class="row g-3 m-3" method="POST">
+        <!-- Add student form fields -->
+        <div class="col-md-4">
+            <label for="studentName" class="form-label">Student Name</label>
+            <input type="text" class="form-control" id="studentName" name="name" required="" pattern="[A-Za-z\s]+" title="Name should contain only alphabetic characters" placeholder="Enter student name">
+        </div>
+
+        <div class="col-md-4">
+            <label for="registrationNo" class="form-label">Registration No</label>
+            <input type="text" class="form-control" id="registrationNo" name="registration" required="" pattern="[0-9]+" title="Registration number should contain only digits" placeholder="Enter registration number">
+        </div>
+
+        <div class="col-md-4">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" required="" placeholder="Enter a secure password">
+        </div>
+
+        <div class="col-md-4">
+    <label for="year" class="form-label">Year</label>
+    <select class="form-control" id="year" name="year" required="">
+        <option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022">2022</option><option value="2021">2021</option><option value="2020">2020</option><option value="2019">2019</option><option value="2018">2018</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option>    </select>
+</div>
+
+
+        <div class="col-md-4">
+            <label for="section" class="form-label">Section</label>
+            <input type="text" class="form-control" id="section" name="section" required="" pattern="[A-Za-z0-9]+" title="Section can contain alphanumeric characters" placeholder="Enter section">
+        </div>
+
+        <div class="col-md-4">
+            <label for="semester" class="form-label">Semester</label>
+            <select class="form-control" id="semester" name="semester" required="">
+                <option value="" disabled="" selected="">Select semester</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                            </select>
+        </div>
+
+        <div class="col-12 mt-5">
+            <button class="btn btn-primary" name="addstudent" id="btnorange" type="submit">Add Student</button>
+        </div>
+    </form>
+</div>
+
+    
+
+
+<!-- Add/Edit Student Modal -->
+<div class="modal fade" id="editStudentModal" tabindex="-1" aria-labelledby="editStudentLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Student</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form method="POST">
+                    <input type="hidden" name="edit_registration" id="edit_registration">
+                    <div class="form-group">
+                        <label class="pb-3" for="edit_name">Student Name</label>
+                        <input type="text" class="form-control" id="edit_name" name="edit_name" required="">
+                    </div>
+                    <div class="form-group">
+                        <label class="pb-3" for="edit_password">Password</label>
+                        <input type="text" class="form-control" id="edit_password" name="edit_password" required="">
+                    </div>
+                    <div class="form-group">
+                        <label class="pb-3" for="edit_fid">Faculty ID</label>
+                        <input type="text" class="form-control" id="edit_fid" name="edit_fid" required="">
+                    </div>
+                    <button type="submit" name="editstudent" class="btn btn-primary">Save Changes</button>
+                </form>
+            </div>
+        </div>
+</div>
+</div>
+<script>
+function openEditModal(name, registration, fid) {
+    document.getElementById('edit_name').value = name;
+    document.getElementById('edit_registration').value = registration;
+    document.getElementById('edit_fid').value = fid;
+    $('#editStudentModal').modal('show');
+}
+</script>
+<!-- List of Students with Edit Button -->
+<h3 class="mt-5 text-center mb-3" style="font-weight:bold">List of Students</h3>
+
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;" class="flex-column flex-sm-row">
+    <div style="display: flex; gap: 10px;" class="flex-md-row">
+        <button onclick="exportExcelWithoutLastColumn(&#39;studentlist&#39;)" class="btn">
+            <i class="fa-solid fa-file-excel"></i> Export Excel
+        </button>
+        <button onclick="printTableWithoutLastColumn(&#39;studentlist&#39;)" class="btn">
+            <i class="fa-solid fa-print"></i> Print
+        </button>
+    </div>
+    <div style="display: flex; gap: 15px; align-items: center;">
+        <!-- Section Filter -->
+        <select id="sectionFilter" class="form-select">
+            <option value="">Filter by Section</option>
+        <option value="A">A</option><option value="h">h</option><option value="d">d</option><option value="e">e</option></select>
+
+        <!-- Search Box -->
+        <div class="search-wrapper" style="position: relative; display: inline-block;">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search in all columns..." style="padding-left: 30px;">
+            <i class="fas fa-search search-icon" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); color: gray;"></i>
+        </div>
+    </div>
+</div>
+<!-- <div class="card mt-4"> -->
+    
+        <div class="card-body">
+            <div class="table-responsive">
+<div id="studentlist_wrapper" class="dataTables_wrapper no-footer"><div class="dataTables_length" id="studentlist_length" style="margin-bottom: 15px;"><label>Show <select name="studentlist_length" aria-controls="studentlist" class=""><option value="10">10</option><option value="50">50</option><option value="100">100</option><option value="500">500</option></select> entries</label></div><table id="studentlist" class="searchtable table table-bordered text-center dataTable no-footer" aria-describedby="studentlist_info">
+    <thead class="text-light" style="background-color: #e45f06;">
+        <tr><th scope="col" class="sorting sorting_asc" tabindex="0" aria-controls="studentlist" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Sr No.: activate to sort column descending" style="width: 44.2625px;">Sr No.</th><th scope="col" class="sorting" tabindex="0" aria-controls="studentlist" rowspan="1" colspan="1" aria-label="Student Name: activate to sort column ascending" style="width: 226.363px;">Student Name</th><th scope="col" class="sorting" tabindex="0" aria-controls="studentlist" rowspan="1" colspan="1" aria-label="Registration No: activate to sort column ascending" style="width: 111.838px;">Registration No</th><th scope="col" class="sorting" tabindex="0" aria-controls="studentlist" rowspan="1" colspan="1" aria-label="Year: activate to sort column ascending" style="width: 31.775px;">Year</th><th scope="col" class="sorting" tabindex="0" aria-controls="studentlist" rowspan="1" colspan="1" aria-label="Semester: activate to sort column ascending" style="width: 67.6625px;">Semester</th><th scope="col" class="sorting" tabindex="0" aria-controls="studentlist" rowspan="1" colspan="1" aria-label="Section: activate to sort column ascending" style="width: 54.2875px;">Section</th><th scope="col" class="sorting" tabindex="0" aria-controls="studentlist" rowspan="1" colspan="1" aria-label="Mobile: activate to sort column ascending" style="width: 47.5875px;">Mobile</th><th scope="col" class="sorting" tabindex="0" aria-controls="studentlist" rowspan="1" colspan="1" aria-label="Outlook Id: activate to sort column ascending" style="width: 242.225px;">Outlook Id</th><th scope="col" class="sorting" tabindex="0" aria-controls="studentlist" rowspan="1" colspan="1" aria-label="Action: activate to sort column ascending" style="width: 133.1px;">Action</th></tr>
+    </thead>
+    <tbody>
+            <tr data-section="A" class="odd">
+                <td class="sorting_1">1</td>
+                <td>ANKITA SINGH</td>
+                <td>229202021</td>
+                <td>2021</td>
+                <td>6</td>
+                <td>A</td>
+                <td></td>
+                <td>ankita.229202021@muj.manipal.edu</td>
+                <td>
+                    <a href="javascript:void(0)" onclick="openEditModal(&quot;ANKITA SINGH&quot;, &quot;229202021&quot;)" class="btn btn-warning">
+                        <i class="fa-solid fa-pen-to-square"></i> Edit
+                    </a>
+                    <a href="http://localhost/muj/admin/adminaddstudent.php?delete_id=229202021" onclick="return confirm(&quot;Are you sure you want to delete this student?&quot;)" class="btn" id="btnred">
+                        <i class="fa-solid fa-trash-can"></i> Delete
+                    </a>
+                </td>
+            </tr><tr data-section="A" class="even">
+                <td class="sorting_1">2</td>
+                <td>AGAM SINGH ARORA</td>
+                <td>229202031</td>
+                <td>2021</td>
+                <td>6</td>
+                <td>A</td>
+                <td></td>
+                <td>agam.229202031@muj.manipal.edu</td>
+                <td>
+                    <a href="javascript:void(0)" onclick="openEditModal(&quot;AGAM SINGH ARORA&quot;, &quot;229202031&quot;)" class="btn btn-warning">
+                        <i class="fa-solid fa-pen-to-square"></i> Edit
+                    </a>
+                    <a href="http://localhost/muj/admin/adminaddstudent.php?delete_id=229202031" onclick="return confirm(&quot;Are you sure you want to delete this student?&quot;)" class="btn" id="btnred">
+                        <i class="fa-solid fa-trash-can"></i> Delete
+                    </a>
+                </td>
+            </tr><tr data-section="h" class="odd">
+                <td class="sorting_1">3</td>
+                <td>ISHAN PATHAK 34</td>
+                <td>229202037</td>
+                <td>2021</td>
+                <td>6</td>
+                <td>h</td>
+                <td></td>
+                <td>ishan.229202037@mujmanipal.edu</td>
+                <td>
+                    <a href="javascript:void(0)" onclick="openEditModal(&quot;ISHAN PATHAK 34&quot;, &quot;229202037&quot;)" class="btn btn-warning">
+                        <i class="fa-solid fa-pen-to-square"></i> Edit
+                    </a>
+                    <a href="http://localhost/muj/admin/adminaddstudent.php?delete_id=229202037" onclick="return confirm(&quot;Are you sure you want to delete this student?&quot;)" class="btn" id="btnred">
+                        <i class="fa-solid fa-trash-can"></i> Delete
+                    </a>
+                </td>
+            </tr><tr data-section="A" class="even">
+                <td class="sorting_1">4</td>
+                <td>DIKSHA KUMARI</td>
+                <td>229202040</td>
+                <td>2021</td>
+                <td>6</td>
+                <td>A</td>
+                <td></td>
+                <td>diksha.229202040@muj.manipal.edu</td>
+                <td>
+                    <a href="javascript:void(0)" onclick="openEditModal(&quot;DIKSHA KUMARI&quot;, &quot;229202040&quot;)" class="btn btn-warning">
+                        <i class="fa-solid fa-pen-to-square"></i> Edit
+                    </a>
+                    <a href="http://localhost/muj/admin/adminaddstudent.php?delete_id=229202040" onclick="return confirm(&quot;Are you sure you want to delete this student?&quot;)" class="btn" id="btnred">
+                        <i class="fa-solid fa-trash-can"></i> Delete
+                    </a>
+                </td>
+            </tr><tr data-section="d" class="odd">
+                <td class="sorting_1">5</td>
+                <td>AYUSH KISHOR PATANKAR</td>
+                <td>229202057</td>
+                <td>2021</td>
+                <td>6</td>
+                <td>d</td>
+                <td></td>
+                <td>ayush.229202057@muj.manipal.edu</td>
+                <td>
+                    <a href="javascript:void(0)" onclick="openEditModal(&quot;AYUSH KISHOR PATANKAR&quot;, &quot;229202057&quot;)" class="btn btn-warning">
+                        <i class="fa-solid fa-pen-to-square"></i> Edit
+                    </a>
+                    <a href="http://localhost/muj/admin/adminaddstudent.php?delete_id=229202057" onclick="return confirm(&quot;Are you sure you want to delete this student?&quot;)" class="btn" id="btnred">
+                        <i class="fa-solid fa-trash-can"></i> Delete
+                    </a>
+                </td>
+            </tr><tr data-section="A" class="even">
+                <td class="sorting_1">6</td>
+                <td>agam.229202031@muj.manipal.edu</td>
+                <td>229209007</td>
+                <td>2021</td>
+                <td>6</td>
+                <td>A</td>
+                <td></td>
+                <td>ashray.229209007@muj.edu</td>
+                <td>
+                    <a href="javascript:void(0)" onclick="openEditModal(&quot;agam.229202031@muj.manipal.edu&quot;, &quot;229209007&quot;)" class="btn btn-warning">
+                        <i class="fa-solid fa-pen-to-square"></i> Edit
+                    </a>
+                    <a href="http://localhost/muj/admin/adminaddstudent.php?delete_id=229209007" onclick="return confirm(&quot;Are you sure you want to delete this student?&quot;)" class="btn" id="btnred">
+                        <i class="fa-solid fa-trash-can"></i> Delete
+                    </a>
+                </td>
+            </tr><tr data-section="e" class="odd">
+                <td class="sorting_1">7</td>
+                <td>CHIRAG KUMAR JHA</td>
+                <td>229209011</td>
+                <td>2021</td>
+                <td>6</td>
+                <td>e</td>
+                <td></td>
+                <td>chirag.229209011@muj.manipal.edu</td>
+                <td>
+                    <a href="javascript:void(0)" onclick="openEditModal(&quot;CHIRAG KUMAR JHA&quot;, &quot;229209011&quot;)" class="btn btn-warning">
+                        <i class="fa-solid fa-pen-to-square"></i> Edit
+                    </a>
+                    <a href="http://localhost/muj/admin/adminaddstudent.php?delete_id=229209011" onclick="return confirm(&quot;Are you sure you want to delete this student?&quot;)" class="btn" id="btnred">
+                        <i class="fa-solid fa-trash-can"></i> Delete
+                    </a>
+                </td>
+            </tr><tr data-section="A" class="even">
+                <td class="sorting_1">8</td>
+                <td>PRASHUK JAIN</td>
+                <td>229302001</td>
+                <td>2021</td>
+                <td>6</td>
+                <td>A</td>
+                <td></td>
+                <td>prashuk.229302001@muj.manipal.edu</td>
+                <td>
+                    <a href="javascript:void(0)" onclick="openEditModal(&quot;PRASHUK JAIN&quot;, &quot;229302001&quot;)" class="btn btn-warning">
+                        <i class="fa-solid fa-pen-to-square"></i> Edit
+                    </a>
+                    <a href="http://localhost/muj/admin/adminaddstudent.php?delete_id=229302001" onclick="return confirm(&quot;Are you sure you want to delete this student?&quot;)" class="btn" id="btnred">
+                        <i class="fa-solid fa-trash-can"></i> Delete
+                    </a>
+                </td>
+            </tr><tr data-section="A" class="odd">
+                <td class="sorting_1">9</td>
+                <td>GAUTAM YADAV 43</td>
+                <td>229302003</td>
+                <td>2021</td>
+                <td>6</td>
+                <td>A</td>
+                <td></td>
+                <td>gautam.229302003@muj.manipal.edu</td>
+                <td>
+                    <a href="javascript:void(0)" onclick="openEditModal(&quot;GAUTAM YADAV 43&quot;, &quot;229302003&quot;)" class="btn btn-warning">
+                        <i class="fa-solid fa-pen-to-square"></i> Edit
+                    </a>
+                    <a href="http://localhost/muj/admin/adminaddstudent.php?delete_id=229302003" onclick="return confirm(&quot;Are you sure you want to delete this student?&quot;)" class="btn" id="btnred">
+                        <i class="fa-solid fa-trash-can"></i> Delete
+                    </a>
+                </td>
+            </tr></tbody>
+</table><div class="dataTables_info" id="studentlist_info" role="status" aria-live="polite">Showing 1 to 9 of 9 entries</div><div class="dataTables_paginate paging_simple_numbers" id="studentlist_paginate"><a class="paginate_button previous disabled" aria-controls="studentlist" aria-disabled="true" role="link" data-dt-idx="previous" tabindex="-1" id="studentlist_previous">Previous</a><span><a class="paginate_button current" aria-controls="studentlist" role="link" aria-current="page" data-dt-idx="0" tabindex="0">1</a></span><a class="paginate_button next disabled" aria-controls="studentlist" aria-disabled="true" role="link" data-dt-idx="next" tabindex="-1" id="studentlist_next">Next</a></div></div>
+    
+    </div>
+    </div>
+    </div>
+</div>
+</div>
+</div>
+
+    </div>
+    <!-- Footer -->
+
+
+
+
+<script>
+    
+    
+$(document).ready(function () {
+    let table = $('.searchtable').DataTable({
+        "paging": true,
+        "searching": false, // Keep disabled for custom search
+        "order": [[0, "asc"]],
+        "lengthMenu": [[10, 50, 100, 500], [10, 50, 100, 500]], // Sorting filter
+        "dom": 'lrtip' // Removes default search box
+    });
+
+    
+
+    // Search functionality for any keyword, word, or number
+    function searchTable(searchValue) {
+        searchValue = searchValue.toLowerCase();
+        table.rows().every(function () {
+            let row = this.node();
+            let found = false;
+            $(row).find('td').each(function () {
+                if ($(this).text().toLowerCase().includes(searchValue)) {
+                    found = true;
+                }
+            });
+            $(row).toggle(found);
+        });
+    }
+
+    // Event listener for search input
+    $('#searchInput').on('input', function () {
+        searchTable(this.value);
+    });
+    $('.dataTables_length').css('margin-bottom', '15px');
+});
+
+
+
+
+// 1. Full Table Export with Black Header
+function exportFullExcelTable(tableId) {
+    const table = document.getElementById(tableId);
+    const rows = [];
+    
+    table.querySelectorAll("tr").forEach((row) => {
+        const rowData = [];
+        row.querySelectorAll("td, th").forEach((cell) => {
+            rowData.push(cell.innerText);
+        });
+        rows.push(rowData);
+    });
+
+    const wb = XLSX.utils.book_new();
+    const ws = XLSX.utils.aoa_to_sheet(rows);
+      // Get the range of the worksheet
+      const range = XLSX.utils.decode_range(ws['!ref']);
+
+         // Style objects
+    const borderStyle = {
+        top: { style: 'thin', color: { rgb: '000000' } },
+        bottom: { style: 'thin', color: { rgb: '000000' } },
+        left: { style: 'thin', color: { rgb: '000000' } },
+        right: { style: 'thin', color: { rgb: '000000' } }
+    };
+
+    
+    // Black header styling
+    const headerStyle = {
+        font: {
+            bold: true,
+            color: { rgb: "000000" }
+        },
+        alignment: {
+            horizontal: "center",
+            vertical: "center"
+        },
+        border: borderStyle,
+        fill: {
+            fgColor: { rgb: "ECECEC" }
+        }
+    };
+
+     const cellStyle = {
+        alignment: {
+            horizontal: "center",
+            vertical: "center"
+        },
+        border: borderStyle
+    };
+
+   // Apply styles to all cells
+   for (let R = range.s.r; R <= range.e.r; ++R) {
+        for (let C = range.s.c; C <= range.e.c; ++C) {
+            const cell_address = XLSX.utils.encode_cell({ r: R, c: C });
+            
+            if (!ws[cell_address]) {
+                ws[cell_address] = { v: '', t: 's' };
+            }
+
+            ws[cell_address].s = R === 0 ? headerStyle : cellStyle;
+        }
+    }
+
+    // Add spacing (column widths)
+    ws['!cols'] = rows[0].map(() => ({ wch: 20 }));
+
+    XLSX.utils.book_append_sheet(wb, ws, "Excel Data");
+    XLSX.writeFile(wb, `Excel_${new Date().toISOString().split('T')[0]}.xlsx`);
+}
+
+function printFullTable(tableId) {
+    let table = document.getElementById(tableId);
+    if (!table) {
+        console.error("Table not found:", tableId);
+        return;
+    }
+
+    let newWindow = window.open("", "_blank");
+    let tableHTML = `
+        <html>
+        <head>
+            <title>Print Table</title>
+            <style>
+                body { font-family: Arial, sans-serif; }
+                table { width: 100%; border-collapse: collapse; }
+                th, td { border: 1px solid black; padding: 8px; text-align: center; }
+                th { background-color: #f2f2f2; }
+            </style>
+        </head>
+        <body>
+            <h2>Table Data</h2>
+            <table>${table.innerHTML}</table>
+        </body>
+        </html>`;
+
+    newWindow.document.write(tableHTML);
+    newWindow.document.close();
+    newWindow.print();
+    newWindow.close();
+}
+
+
+// 3. Export Without Last Column
+function exportExcelWithoutLastColumn(tableId) {
+    const table = document.getElementById(tableId);
+    const rows = [];
+    
+    table.querySelectorAll("tr").forEach((row) => {
+        const rowData = [];
+        const cells = row.querySelectorAll("td, th");
+        cells.forEach((cell, index) => {
+            if(index < cells.length - 1) rowData.push(cell.innerText);
+        });
+        rows.push(rowData);
+    });
+
+    // Same styling as full export
+    const wb = XLSX.utils.book_new();
+    const ws = XLSX.utils.aoa_to_sheet(rows);
+      // Style objects
+      const borderStyle = {
+        top: { style: 'thin', color: { rgb: '000000' } },
+        bottom: { style: 'thin', color: { rgb: '000000' } },
+        left: { style: 'thin', color: { rgb: '000000' } },
+        right: { style: 'thin', color: { rgb: '000000' } }
+    };
+
+    
+    // Black header styling
+    const headerStyle = {
+        font: {
+            bold: true,
+            color: { rgb: "000000" }
+        },
+        alignment: {
+            horizontal: "center",
+            vertical: "center"
+        },
+        border: borderStyle,
+        fill: {
+            fgColor: { rgb: "ECECEC" }
+        }
+    };
+
+     const cellStyle = {
+        alignment: {
+            horizontal: "center",
+            vertical: "center"
+        },
+        border: borderStyle
+    };
+
+
+    // Set column widths
+    ws['!cols'] = Array(rows[0].length).fill({ wch: 20 });
+
+
+    XLSX.utils.book_append_sheet(wb, ws, "Excel Data");
+    XLSX.writeFile(wb, `Excel_${new Date().toISOString().split('T')[0]}.xlsx`);
+}
+
+// 4. Print Without Last Column
+function printTableWithoutLastColumn(tableId) {
+    const table = document.getElementById(tableId).cloneNode(true);
+    
+    // Remove last column
+    table.querySelectorAll("tr").forEach(row => {
+        const cells = row.querySelectorAll("th, td");
+        if(cells.length > 0) cells[cells.length - 1].remove();
+    });
+
+    const printWindow = window.open('width=800,height=600');
+    printWindow.document.write(`
+        <html>
+            <head>
+                <title>Print Table</title>
+                <style>
+                    body { margin: 20px; }
+                    table { 
+                        border-collapse: collapse; 
+                        width: 100%;
+                    
+                    }
+                    th, td { 
+                        border: 1px solid #000; 
+                        padding: 12px;
+                        text-align: center;
+                    }
+                    th { 
+                        background-color:rgb(255, 255, 255); 
+                        color: black; 
+                        font-weight: bold;
+                        font-size:18px;
+                   
+                    }
+                </style>
+            </head>
+            <body>
+                <h2 style="color: #000; text-align: center; margin-bottom: 25px;">
+                   Print Table
+                </h2>
+                ${table.outerHTML}
+            </body>
+        </html>
+    `);
+    
+    printWindow.document.close();
+    printWindow.print();
+}
+
+
+
+</script>
+
+
+
+<!---------------button to print or export table ---------------------->
+<!-- 
+<div style="display: flex; gap: 10px;">
+    <button onclick="exportFullExcelTable('tableId')" class="btn">
+        <i class="fa-solid fa-file-excel"></i> Full Export
+    </button>
+    <button onclick="printFullTable('tableId')" class="btn">
+        <i class="fa-solid fa-print"></i> Full Print
+    </button>
+    <button onclick="exportExcelWithoutLastColumn('tableId')" class="btn">
+        <i class="fa-solid fa-file-excel"></i> Export Without Action
+    </button>
+    <button onclick="printTableWithoutLastColumn('tableId')" class="btn">
+        <i class="fa-solid fa-print"></i> Print Without Action
+    </button>
+</div> -->
+
+<footer class="custom-footer text-center py-4">
+    <div class="container">
+    <span>© 2025 <a style="text-decoration:none; color:black" href="https://www.instagram.com/rakesh.mali03/">RBV</a> . All Rights Reserved.</span>
+    </div>
+</footer>
+
+
+<!-------------------------------------------------filter by section ---------------------------------------->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    let sectionFilter = document.getElementById("sectionFilter");
+    let tableRows = document.querySelectorAll(".searchtable tbody tr");
+    let uniqueSections = new Set();
+
+    // Collect unique sections dynamically from table rows
+    tableRows.forEach(row => {
+        let section = row.getAttribute("data-section");
+        if (section) {
+            uniqueSections.add(section.trim());
+        }
+    });
+
+    // Populate section dropdown
+    uniqueSections.forEach(section => {
+        let option = document.createElement("option");
+        option.value = section;
+        option.textContent = section;
+        sectionFilter.appendChild(option);
+    });
+
+    // Filter functionality
+    sectionFilter.addEventListener("change", function () {
+        let selectedSection = this.value.trim().toLowerCase();
+
+        tableRows.forEach(row => {
+            let rowSection = row.getAttribute("data-section") ? row.getAttribute("data-section").trim().toLowerCase() : "";
+            row.style.display = selectedSection === "" || rowSection === selectedSection ? "" : "none";
+        });
+    });
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/feather-icons"></script>
+
+
+
+
+</body></html>
