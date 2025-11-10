@@ -1,0 +1,51 @@
+pipeline {
+  agent any 
+  environment {
+    // adjust to your XAMPP htdocs path
+    DEPLOY_DIR = "C:\\xampp\\htdocs\\muj-project-allocation"
+    // Optional: path to composer if not in PATH
+    COMPOSER = "composer"
+  }
+  stages {
+    stage('Checkout') {
+      steps {
+        checkout scm
+      }
+    }
+    stage('Install Dependencies') {
+      steps {
+        // If composer.json exists
+        script {
+          if (fileExists('composer.json')) {
+            bat "${env.COMPOSER} install --no-interaction --prefer-dist"
+          } else {
+            echo "No composer.json found — skipping composer install"
+          }
+        }
+      }
+    }
+    stage('Lint / Tests (optional)') {
+      steps {
+        echo "Add phpcs/phpunit commands here if you add tests"
+      }
+    }
+    stage('Deploy to XAMPP (Local)') {
+      steps {
+        echo "Deploying to ${env.DEPLOY_DIR}"
+        // create directory if missing
+        bat """
+        if not exist "${DEPLOY_DIR}" mkdir "${DEPLOY_DIR}"
+        xcopy /E /Y /I "${WORKSPACE}\\*" "${DEPLOY_DIR}\\"
+        """
+      }
+    }
+  }
+  post {
+    success {
+      echo "Pipeline finished ✅"
+    }
+    failure {
+      echo "Pipeline failed ❌"
+    }
+  }
+}
