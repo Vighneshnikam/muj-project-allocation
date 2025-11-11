@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   environment {
-    DEPLOY_DIR = "D:/xampp/htdocs"   // change if your XAMPP is elsewhere
+    DEPLOY_DIR = "E:\xampp\htdocs\muj"   // change if your XAMPP is elsewhere
     REPO_URL = 'https://github.com/Vighneshnikam/muj-project-allocation.git'
     BRANCH = 'main' // or master
   }
