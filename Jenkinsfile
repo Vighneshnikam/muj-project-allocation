@@ -27,14 +27,15 @@ pipeline {
       }
     }
 
-    stage('Copy files to webserver') {
-      steps {
-        // Use robocopy for robust copy (excludes .git)
-        bat """
-        robocopy "%WORKSPACE%" "${DEPLOY_DIR}" /MIR /XD .git
-        """
-      }
+  stage('Copy files to webserver') {
+    steps {
+        bat '''
+            robocopy "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\MUJ_main" "E:\\xampp\\htdocs\\muj" /MIR /XD .git
+            if %ERRORLEVEL% LEQ 1 exit 0
+        '''
     }
+}
+
 
     stage('Notify') {
       steps {
